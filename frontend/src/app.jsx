@@ -1,12 +1,15 @@
 import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import HomePage from './pages/HomePage';
 
-const App = () => {
+function App() {
   return (
-    <div className="container text-center mt-5">
-      <h1>Selamat Datang di Aksara Jawa App</h1>
-      <p>Ini adalah boilerplate awal menggunakan React + Bootstrap + Webpack</p>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+      </Routes>
+    </Router>
   );
-};
+}
 
 export default App;
