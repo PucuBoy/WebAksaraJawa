@@ -1,10 +1,13 @@
 import React from 'react';
 import { Container, Row, Col, Button, Card } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import aksarahome from '../assets/aksarahome.png';
 import sedangmenulis from '../assets/sedangmenulis.png';
 
 const HomePage = () => {
+  const navigate = useNavigate(); 
+
   return (
     <div style={{ backgroundColor: '#FFDDAB', position: 'relative' }}>
       {/* Navbar */}
@@ -85,7 +88,8 @@ const HomePage = () => {
                 bg: '#F0BB78',
                 textColor: '#3E1F1F',
                 buttonBg: '#543A14',
-                buttonText: '#FFD8A9'
+                buttonText: '#FFD8A9',
+                path: '/why-learn'  
               },
               {
                 title: 'Sejarah Aksara Jawa',
@@ -93,7 +97,8 @@ const HomePage = () => {
                 bg: '#543A14',
                 textColor: '#FFD8A9',
                 buttonBg: '#F0BB78',
-                buttonText: '#3E1F1F'
+                buttonText: '#3E1F1F',
+                path: '/history'
               },
               {
                 title: 'Aksara Jawa Dalam Kehidupan Sehari-Hari',
@@ -101,7 +106,8 @@ const HomePage = () => {
                 bg: '#F0BB78',
                 textColor: '#3E1F1F',
                 buttonBg: '#543A14',
-                buttonText: '#FFD8A9'
+                buttonText: '#FFD8A9',
+                path: '/daily-life'
               },
               {
                 title: 'Keuntungan Belajar Aksara Jawa',
@@ -109,7 +115,8 @@ const HomePage = () => {
                 bg: '#543A14',
                 textColor: '#FFD8A9',
                 buttonBg: '#F0BB78',
-                buttonText: '#3E1F1F'
+                buttonText: '#3E1F1F',
+                path: '/benefits'
               },
               {
                 title: 'Fakta Menarik Aksara Jawa',
@@ -117,7 +124,8 @@ const HomePage = () => {
                 bg: '#F0BB78',
                 textColor: '#3E1F1F',
                 buttonBg: '#543A14',
-                buttonText: '#FFD8A9'
+                buttonText: '#FFD8A9',
+                path: '/facts'
               },
             ].map((card, idx) => (
               <Col key={idx} md={idx < 3 ? 4 : 6}>
@@ -150,6 +158,7 @@ const HomePage = () => {
                       {card.text}
                     </Card.Text>
                     <Button
+                      onClick={() => navigate(card.path)}  // Pastikan menggunakan arrow function
                       style={{
                         backgroundColor: card.buttonBg,
                         border: 'none',
