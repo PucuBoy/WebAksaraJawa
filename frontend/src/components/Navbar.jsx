@@ -1,5 +1,6 @@
 import React from 'react';
 import { Nav } from 'react-bootstrap';
+import { NavLink } from 'react-router-dom';
 
 const Navbar = () => {
   const navItemStyle = {
@@ -8,46 +9,62 @@ const Navbar = () => {
     padding: '8px 20px',
     color: '#FFE6C7',
     margin: '0 5px',
-    textDecoration: 'none'
+    textDecoration: 'none',
   };
 
   const activeStyle = {
-    ...navItemStyle,
-    backgroundColor: '#6B4F4F'
+    backgroundColor: '#FFF',
+    color: '#000',
+    fontWeight: 'bold',
   };
 
   return (
-    <Nav 
-      className="p-3" 
-      style={{ 
+    <Nav
+      className="p-3"
+      style={{
         display: 'flex',
         justifyContent: 'flex-start',
         gap: '10px',
         margin: '20px',
-        marginLeft: '100px'
+        marginLeft: '100px',
       }}
     >
-      <Nav.Link 
-        href="#home" 
-        style={activeStyle}
+      <Nav.Link
+        as={NavLink}
+        to="/"
+        style={({ isActive }) =>
+          isActive ? { ...navItemStyle, ...activeStyle } : navItemStyle
+        }
       >
-        Home
+        Beranda
       </Nav.Link>
-      <Nav.Link 
-        href="#modul" 
-        style={navItemStyle}
+
+      <Nav.Link
+        as={NavLink}
+        to="/modul"
+        style={({ isActive }) =>
+          isActive ? { ...navItemStyle, ...activeStyle } : navItemStyle
+        }
       >
         Modul
       </Nav.Link>
-      <Nav.Link 
-        href="#latihan" 
-        style={navItemStyle}
+
+      <Nav.Link
+        as={NavLink}
+        to="/exercise"
+        style={({ isActive }) =>
+          isActive ? { ...navItemStyle, ...activeStyle } : navItemStyle
+        }
       >
         Latihan
       </Nav.Link>
-      <Nav.Link 
-        href="#klasifikasi-gambar" 
-        style={navItemStyle}
+
+      <Nav.Link
+        as={NavLink}
+        to="/klasifikasi-gambar"
+        style={({ isActive }) =>
+          isActive ? { ...navItemStyle, ...activeStyle } : navItemStyle
+        }
       >
         Klasifikasi Gambar
       </Nav.Link>
