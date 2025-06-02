@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Row, Col, Button, Card } from 'react-bootstrap';
+import { Container, Row, Col, Button, Card, Carousel } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import aksarahome from '../assets/aksarahome.png';
@@ -66,18 +66,12 @@ const HomePage = () => {
         </Row>
       </Container>
 
-      {/* Background bawah (warna kedua) */}
+      {/* card section */}
       <div style={{
-        backgroundColor: '#6B3F31',
-        height: '400px',
-        marginTop: '120px'
-      }}></div>
-
-      {/* Card Section floating di antara dua warna */}
-      <div style={{
-        position: 'absolute',
-        top: 'calc(100vh - 200px)',
+        position: 'relative',
+        marginTop: '50px',
         width: '100%',
+        paddingBottom: '50px'
       }}>
         <Container>
           <Row className="g-4 justify-content-center">
@@ -158,7 +152,7 @@ const HomePage = () => {
                       {card.text}
                     </Card.Text>
                     <Button
-                      onClick={() => navigate(card.path)}  // Pastikan menggunakan arrow function
+                      onClick={() => navigate(card.path)}  
                       style={{
                         backgroundColor: card.buttonBg,
                         border: 'none',
@@ -178,6 +172,163 @@ const HomePage = () => {
           </Row>
         </Container>
       </div>
+
+      {/* Video Section dengan YouTube Embed */}
+      <Container className="my-5 py-4" style={{ backgroundColor: '#FDC886', borderRadius: '10px' }}>
+        <Row className="align-items-center text-center text-md-start">
+          <Col md={8}>
+            <h5 className="fw-bold mb-2">Mari Pelajari Lebih Lanjut Tentang Sejarah Aksara Jawa</h5>
+            <p>Klik cuplikan di samping</p>
+          </Col>
+          <Col md={4}>
+            <div className="ratio ratio-16x9" style={{ borderRadius: '8px', overflow: 'hidden' }}>
+              <iframe
+                src="https://www.youtube.com/embed/NztVQA74iDk"
+                title="YouTube video player"
+                allowFullScreen
+              />
+            </div>
+          </Col>
+        </Row>
+      </Container>
+
+
+      {/* Kutipan Budaya */}
+      <Container className="my-5 p-4" style={{ backgroundColor: '#FFF2DC', borderRadius: '8px' }}>
+        <Row>
+          <Col md={4}>
+            <div style={{ backgroundColor: '#EADBC8', height: '160px', borderRadius: '10px' }} />
+          </Col>
+          <Col md={8} className="d-flex flex-column justify-content-center">
+            <p className="mb-2">Ngèlmu iku kalakone kanthi laku.</p>
+            <small>
+              Menurut ilmu itu harus diiringi dengan tindakan.
+              Meresapi filosofi ini membantu kita memahami aksara Jawa lebih dalam.
+              <br /><em>— Ki Hadjar Dewantara</em>
+            </small>
+          </Col>
+        </Row>
+      </Container>
+
+      {/* Testimonial Carousel */}
+      <Container className="my-5">
+        <h5 className="fw-bold">Apa Kata Mereka?</h5>
+        <Carousel indicators={false} controls={false} interval={4000}>
+          {/* Slide 1 */}
+          <Carousel.Item>
+            <Row className="justify-content-center gap-3">
+              {[
+                { name: 'Nana', text: 'Sangat membantu memahami budaya Jawa.' },
+                { name: 'Didi', text: 'Visualnya menarik dan mudah dimengerti.' },
+                { name: 'Rani', text: 'Sekarang saya bisa baca aksara Jawa!' }
+              ].map((testimonial, idx) => (
+                <Col key={idx} md={3} className="p-2">
+                  <Card className="h-100 shadow-sm">
+                    <Card.Body>
+                      <Card.Text style={{ fontSize: '0.95rem' }}>
+                        "{testimonial.text}"
+                      </Card.Text>
+                      <Card.Footer className="text-end mt-3">
+                        <strong>{testimonial.name}</strong>
+                      </Card.Footer>
+                    </Card.Body>
+                  </Card>
+                </Col>
+              ))}
+            </Row>
+          </Carousel.Item>
+
+          {/* Slide 2 */}
+          <Carousel.Item>
+            <Row className="justify-content-center gap-3">
+              {[
+                { name: 'Bimo', text: 'Interaktif dan menyenangkan belajar di sini.' },
+                { name: 'Sari', text: 'Kontennya lengkap dan historis.' },
+                { name: 'Wira', text: 'User-friendly dan mendidik!' }
+              ].map((testimonial, idx) => (
+                <Col key={idx} md={3} className="p-2">
+                  <Card className="h-100 shadow-sm">
+                    <Card.Body>
+                      <Card.Text style={{ fontSize: '0.95rem' }}>
+                        "{testimonial.text}"
+                      </Card.Text>
+                      <Card.Footer className="text-end mt-3">
+                        <strong>{testimonial.name}</strong>
+                      </Card.Footer>
+                    </Card.Body>
+                  </Card>
+                </Col>
+              ))}
+            </Row>
+          </Carousel.Item>
+        </Carousel>
+      </Container>
+
+
+
+      {/* Form Ulasan */}
+      <Container className="my-5">
+        <Row>
+          <Col md={6}>
+            <h5 className="fw-bold">Berikan Ulasan Mu</h5>
+            <p>Ulasan mu membantu kami mengembangkan platform belajar Aksara Jawa</p>
+          </Col>
+          <Col md={6}>
+            <Card>
+              <Card.Body>
+                <form>
+                  <div className="mb-2">
+                    <label className="form-label">Nama</label>
+                    <input type="text" className="form-control" />
+                  </div>
+                  <div className="mb-2">
+                    <label className="form-label">Judul Ulasan</label>
+                    <input type="text" className="form-control" />
+                  </div>
+                  <div className="mb-3">
+                    <label className="form-label">Isi Ulasan</label>
+                    <textarea className="form-control" rows="3"></textarea>
+                  </div>
+                  <Button variant="dark" type="submit">Kirim</Button>
+                </form>
+              </Card.Body>
+            </Card>
+          </Col>
+        </Row>
+      </Container>
+
+      {/* Footer */}
+      <footer style={{ backgroundColor: '#D9D9D9', padding: '40px 0', marginTop: '50px' }}>
+        <Container>
+          <Row className="text-center text-md-start">
+            <Col md={4} className="mb-4 mb-md-0">
+              <h6 className="fw-bold">Aksaraku</h6>
+              <p style={{ fontSize: '0.9rem' }}>
+                Platform pembelajaran aksara Jawa secara daring yang interaktif dan mudah digunakan.
+              </p>
+            </Col>
+            <Col md={4} className="mb-4 mb-md-0">
+              <h6 className="fw-bold">Tautan</h6>
+              <ul className="list-unstyled" style={{ fontSize: '0.9rem' }}>
+                <li><a href="/materi" className="text-decoration-none text-dark">Materi</a></li>
+                <li><a href="/latihan" className="text-decoration-none text-dark">Latihan</a></li>
+                <li><a href="/konversi" className="text-decoration-none text-dark">Konversi</a></li>
+                <li><a href="/kuis" className="text-decoration-none text-dark">Kuis</a></li>
+              </ul>
+            </Col>
+            <Col md={4}>
+              <h6 className="fw-bold">Kontak</h6>
+              <p style={{ fontSize: '0.9rem' }}>Email: aksaraku@email.com</p>
+              <p style={{ fontSize: '0.9rem' }}>Instagram: @aksaraku.id</p>
+            </Col>
+          </Row>
+          <hr />
+          <p className="text-center" style={{ fontSize: '0.8rem', marginTop: '20px' }}>
+            &copy; 2025 Aksaraku. All rights reserved.
+          </p>
+        </Container>
+      </footer>
+        
     </div>
   );
 };
