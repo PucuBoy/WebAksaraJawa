@@ -1,0 +1,152 @@
+[
+  {
+    "category": "Pengenalan",
+    "questionText": "Apa huruf Jawa untuk 'A'?",
+    "options": [
+      { "text": "ꦲ", "isCorrect": true },
+      { "text": "ꦤ", "isCorrect": false },
+      { "text": "ꦧ", "isCorrect": false },
+      { "text": "ꦕ", "isCorrect": false }
+    ]
+  },
+  {
+    "category": "Pengenalan",
+    "questionText": "Apa aksara Jawa dari huruf 'N'?",
+    "options": [
+      { "text": "ꦤ", "isCorrect": true },
+      { "text": "ꦢ", "isCorrect": false },
+      { "text": "ꦩ", "isCorrect": false },
+      { "text": "ꦒ", "isCorrect": false }
+    ]
+  },
+  {
+    "category": "Pengenalan",
+    "questionText": "Aksara Jawa untuk 'K' adalah...",
+    "options": [
+      { "text": "ꦏ", "isCorrect": true },
+      { "text": "ꦒ", "isCorrect": false },
+      { "text": "ꦛ", "isCorrect": false },
+      { "text": "ꦩ", "isCorrect": false }
+    ]
+  },
+  {
+    "category": "Pengenalan",
+    "questionText": "Apa huruf Jawa dari 'B'?",
+    "options": [
+      { "text": "ꦧ", "isCorrect": true },
+      { "text": "ꦛ", "isCorrect": false },
+      { "text": "ꦚ", "isCorrect": false },
+      { "text": "ꦠ", "isCorrect": false }
+    ]
+  },
+  {
+    "category": "Pengenalan",
+    "questionText": "Aksara Jawa dari huruf 'D' adalah...",
+    "options": [
+      { "text": "ꦢ", "isCorrect": true },
+      { "text": "ꦒ", "isCorrect": false },
+      { "text": "ꦛ", "isCorrect": false },
+      { "text": "ꦥ", "isCorrect": false }
+    ]
+  },
+  {
+    "category": "Pengenalan",
+    "questionText": "Apa aksara Jawa dari 'M'?",
+    "options": [
+      { "text": "ꦩ", "isCorrect": true },
+      { "text": "ꦚ", "isCorrect": false },
+      { "text": "ꦛ", "isCorrect": false },
+      { "text": "ꦕ", "isCorrect": false }
+    ]
+  },
+  {
+    "category": "Pengenalan",
+    "questionText": "Aksara Jawa untuk 'L' adalah...",
+    "options": [
+      { "text": "ꦭ", "isCorrect": true },
+      { "text": "ꦥ", "isCorrect": false },
+      { "text": "ꦲ", "isCorrect": false },
+      { "text": "ꦚ", "isCorrect": false }
+    ]
+  },
+  {
+    "category": "Pengenalan",
+    "questionText": "Apa aksara Jawa dari 'G'?",
+    "options": [
+      { "text": "ꦒ", "isCorrect": true },
+      { "text": "ꦏ", "isCorrect": false },
+      { "text": "ꦕ", "isCorrect": false },
+      { "text": "ꦚ", "isCorrect": false }
+    ]
+  },
+  {
+    "category": "Pengenalan",
+    "questionText": "Huruf Jawa 'T' adalah...",
+    "options": [
+      { "text": "ꦠ", "isCorrect": true },
+      { "text": "ꦛ", "isCorrect": false },
+      { "text": "ꦥ", "isCorrect": false },
+      { "text": "ꦧ", "isCorrect": false }
+    ]
+  },
+  {
+    "category": "Pengenalan",
+    "questionText": "Huruf 'P' dalam aksara Jawa ditulis...",
+    "options": [
+      { "text": "ꦥ", "isCorrect": true },
+      { "text": "ꦧ", "isCorrect": false },
+      { "text": "ꦕ", "isCorrect": false },
+      { "text": "ꦏ", "isCorrect": false }
+    ]
+  },
+  {
+    "category": "Pengenalan",
+    "questionText": "Apa aksara Jawa dari 'S'?",
+    "options": [
+      { "text": "ꦱ", "isCorrect": true },
+      { "text": "ꦏ", "isCorrect": false },
+      { "text": "ꦕ", "isCorrect": false },
+      { "text": "ꦢ", "isCorrect": false }
+    ]
+  },
+  {
+    "category": "Pengenalan",
+    "questionText": "Aksara Jawa 'Y' adalah...",
+    "options": [
+      { "text": "ꦪ", "isCorrect": true },
+      { "text": "ꦗ", "isCorrect": false },
+      { "text": "ꦛ", "isCorrect": false },
+      { "text": "ꦚ", "isCorrect": false }
+    ]
+  },
+  {
+    "category": "Pengenalan",
+    "questionText": "Apa aksara Jawa dari 'R'?",
+    "options": [
+      { "text": "ꦫ", "isCorrect": true },
+      { "text": "ꦩ", "isCorrect": false },
+      { "text": "ꦛ", "isCorrect": false },
+      { "text": "ꦏ", "isCorrect": false }
+    ]
+  },
+  {
+    "category": "Pengenalan",
+    "questionText": "Aksara Jawa 'H' adalah...",
+    "options": [
+      { "text": "ꦲ", "isCorrect": true },
+      { "text": "ꦥ", "isCorrect": false },
+      { "text": "ꦧ", "isCorrect": false },
+      { "text": "ꦕ", "isCorrect": false }
+    ]
+  },
+  {
+    "category": "Pengenalan",
+    "questionText": "Apa huruf Jawa dari 'C'?",
+    "options": [
+      { "text": "ꦕ", "isCorrect": true },
+      { "text": "ꦚ", "isCorrect": false },
+      { "text": "ꦗ", "isCorrect": false },
+      { "text": "ꦏ", "isCorrect": false }
+    ]
+  }
+]  

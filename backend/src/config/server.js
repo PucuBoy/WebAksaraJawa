@@ -1,27 +1,16 @@
-// server.js
 const express = require('express');
+const app = express();
 const cors = require('cors');
 const morgan = require('morgan');
-const dotenv = require('dotenv');
+const questionRoutes = require('../routes/questions');
 
-dotenv.config();
-
-const app = express();
-
-// Middleware
 app.use(cors());
-app.use(morgan('dev'));
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(morgan('dev'));
 
-// Routing
-const imageRoutes = require('./src/routes/image.routes');
-app.use('/api/images', imageRoutes);
+app.use('/api/questions', questionRoutes);
 
-// Server
-const PORT = process.env.PORT || 3000;
+const PORT = 5000;
 app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+  console.log(`Server running at http://localhost:${PORT}`);
 });
-
-const ML_API_URL = process.env.ML_API_URL;
