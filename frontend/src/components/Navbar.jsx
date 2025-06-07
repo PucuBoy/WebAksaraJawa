@@ -61,7 +61,7 @@ const Navbar = () => {
 
       <Nav.Link
         as={NavLink}
-        to="/klasifikasi-gambar"
+        to="/klasifikasi"
         style={({ isActive }) =>
           isActive ? { ...navItemStyle, ...activeStyle } : navItemStyle
         }

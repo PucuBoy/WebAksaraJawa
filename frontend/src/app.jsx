@@ -7,6 +7,7 @@ import DailyLifePage from './pages/DailyLifePage';
 import BenefitsPage from './pages/BenefitsPage';
 import FactsPage from './pages/FactsPage';
 import ExercisePage from './pages/ExercisePage';
+import ImageClassifier from './pages/ImageClassifier';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/benefits" element={<BenefitsPage />} />
         <Route path="/facts" element={<FactsPage />} />
         <Route path="/exercise" element={<ExercisePage />} />
+        <Route path="/klasifikasi" element={<ImageClassifier />} />
       </Routes>
     </Router>
   );
