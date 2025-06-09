@@ -1,20 +1,50 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import Navbar from '../components/Navbar';
 import { Container, Row, Col, Card, Button, Form } from 'react-bootstrap';
 
 const ImageClassifierPage = () => {
   const [imagePreview, setImagePreview] = useState(null);
   const [translation, setTranslation] = useState("Terjemahan");
+  const [imageFile, setImageFile] = useState(null);
+
+  const imageRef = useRef(null);
 
   const handleImageUpload = (e) => {
     const file = e.target.files[0];
     if (file) {
-      setImagePreview(URL.createObjectURL(file));
+      setImageFile(file); 
+      const imageUrl = URL.createObjectURL(file);
+      setImagePreview(imageUrl);
     }
   };
 
-  const handleSubmit = () => {
-    setTranslation("Contoh hasil klasifikasi: ꦧ (ba)");
+  const handleSubmit = async () => {
+    if (!imageFile) {
+      setTranslation("❌ Harap unggah gambar terlebih dahulu.");
+      return;
+    }
+
+    setTranslation("🔍 Sedang memproses...");
+
+    const formData = new FormData();
+    formData.append("image", imageFile);
+
+    try {
+      const response = await fetch("http://localhost:5000/api/classify", {
+        method: "POST",
+        body: formData,
+      });
+
+      const data = await response.json();
+      if (data.label) {
+        setTranslation(`✅ Hasil klasifikasi: ${data.label}`);
+      } else {
+        setTranslation("❌ Gagal mendapatkan hasil klasifikasi.");
+      }
+    } catch (err) {
+      console.error(err);
+      setTranslation("❌ Terjadi kesalahan saat mengirim gambar.");
+    }
   };
 
   return (
@@ -42,23 +72,46 @@ const ImageClassifierPage = () => {
           <Col md={6}>
             <div className="mb-3 d-flex gap-2">
               <Form.Group controlId="uploadImage">
-                <Form.Label>
-                  <Button variant="secondary">Ambil gambar</Button>
-                </Form.Label>
-                <Form.Control type="file" accept="image/*" onChange={handleImageUpload} hidden />
+                <Form.Control 
+                  type="file" 
+                  accept="image/*" 
+                  capture="environment"
+                  onChange={handleImageUpload} 
+                  style={{ display: 'none' }}
+                />
+                <Button 
+                  variant="secondary" 
+                  onClick={() => document.getElementById('uploadImage').click()}
+                >
+                  Ambil gambar
+                </Button>
               </Form.Group>
 
               <Form.Group controlId="uploadImageFile">
-                <Form.Label>
-                  <Button variant="light" className="border">Unggah gambar</Button>
-                </Form.Label>
-                <Form.Control type="file" accept="image/*" onChange={handleImageUpload} hidden />
+                <Form.Control 
+                  type="file" 
+                  accept="image/*" 
+                  onChange={handleImageUpload} 
+                  style={{ display: 'none' }}
+                />
+                <Button 
+                  variant="light" 
+                  className="border"
+                  onClick={() => document.getElementById('uploadImageFile').click()}
+                >
+                  Unggah gambar
+                </Button>
               </Form.Group>
             </div>
 
             <Card className="p-3" style={{ minHeight: '250px' }}>
               {imagePreview ? (
-                <Card.Img variant="top" src={imagePreview} />
+                <Card.Img
+                  id="uploadedImage"
+                  ref={imageRef}
+                  src={imagePreview}
+                  alt="Preview"
+                />
               ) : (
                 <div className="text-center text-muted">📷 Pratinjau gambar akan muncul di sini</div>
               )}
