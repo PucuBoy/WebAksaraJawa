@@ -1,0 +1,152 @@
+[
+    {
+      "questionText": "Apa fungsi sandhangan 'ꦶ' dalam aksara Jawa?",
+      "options": [
+        { "text": "Untuk vokal 'i'", "isCorrect": true },
+        { "text": "Untuk vokal 'a'", "isCorrect": false },
+        { "text": "Untuk vokal 'u'", "isCorrect": false },
+        { "text": "Untuk vokal 'e'", "isCorrect": false }
+      ],
+      "category": "Sandangan"
+    },
+    {
+      "questionText": "Tulisan aksara Jawa untuk 'siti' menggunakan sandhangan apa?",
+      "options": [
+        { "text": "ꦱꦶꦠꦶ", "isCorrect": true },
+        { "text": "ꦱꦺꦠꦶ", "isCorrect": false },
+        { "text": "ꦱꦸꦠꦶ", "isCorrect": false },
+        { "text": "ꦱꦶꦠꦸ", "isCorrect": false }
+      ],
+      "category": "Sandangan"
+    },
+    {
+      "questionText": "Sandhangan apa yang digunakan untuk vokal 'u'?",
+      "options": [
+        { "text": "ꦸ", "isCorrect": true },
+        { "text": "ꦶ", "isCorrect": false },
+        { "text": "ꦺ", "isCorrect": false },
+        { "text": "ꦻ", "isCorrect": false }
+      ],
+      "category": "Sandangan"
+    },
+    {
+      "questionText": "Sandhangan 'ꦺ' menyatakan bunyi?",
+      "options": [
+        { "text": "'e' seperti pada kata 'bebek'", "isCorrect": true },
+        { "text": "'i'", "isCorrect": false },
+        { "text": "'u'", "isCorrect": false },
+        { "text": "'a'", "isCorrect": false }
+      ],
+      "category": "Sandangan"
+    },
+    {
+      "questionText": "Tulisan aksara Jawa dari 'ratu' menggunakan sandhangan?",
+      "options": [
+        { "text": "ꦫꦠꦸ", "isCorrect": true },
+        { "text": "ꦫꦛꦶ", "isCorrect": false },
+        { "text": "ꦫꦛꦸ", "isCorrect": false },
+        { "text": "ꦫꦠꦶ", "isCorrect": false }
+      ],
+      "category": "Sandangan"
+    },
+    {
+      "questionText": "Sandhangan untuk bunyi 'é' (seperti pada 'lémah') adalah?",
+      "options": [
+        { "text": "ꦺ", "isCorrect": true },
+        { "text": "ꦻ", "isCorrect": false },
+        { "text": "ꦴ", "isCorrect": false },
+        { "text": "ꦷ", "isCorrect": false }
+      ],
+      "category": "Sandangan"
+    },
+    {
+      "questionText": "Tulisan aksara Jawa dari 'guru' adalah?",
+      "options": [
+        { "text": "ꦒꦸꦫꦸ", "isCorrect": true },
+        { "text": "ꦒꦺꦫꦸ", "isCorrect": false },
+        { "text": "ꦒꦫꦸ", "isCorrect": false },
+        { "text": "ꦒꦸꦫꦶ", "isCorrect": false }
+      ],
+      "category": "Sandangan"
+    },
+    {
+      "questionText": "Sandhangan 'cecak' (ꦁ) berfungsi untuk?",
+      "options": [
+        { "text": "Menunjukkan bunyi 'ng' di akhir suku kata", "isCorrect": true },
+        { "text": "Menunjukkan bunyi 'n'", "isCorrect": false },
+        { "text": "Menunjukkan vokal panjang", "isCorrect": false },
+        { "text": "Menghilangkan vokal", "isCorrect": false }
+      ],
+      "category": "Sandangan"
+    },
+    {
+      "questionText": "Tulisan aksara Jawa dari kata 'tangi' adalah?",
+      "options": [
+        { "text": "ꦠꦁꦒꦶ", "isCorrect": false },
+        { "text": "ꦠꦁꦶ", "isCorrect": false },
+        { "text": "ꦠꦔꦶ", "isCorrect": true },
+        { "text": "ꦠꦔꦺ", "isCorrect": false }
+      ],
+      "category": "Sandangan"
+    },
+    {
+      "questionText": "Fungsi sandhangan 'pengkal' (ꦾ) adalah?",
+      "options": [
+        { "text": "Menambahkan bunyi 'y' setelah konsonan", "isCorrect": true },
+        { "text": "Menambahkan bunyi 'r'", "isCorrect": false },
+        { "text": "Menambahkan bunyi 'ng'", "isCorrect": false },
+        { "text": "Mengganti vokal 'a'", "isCorrect": false }
+      ],
+      "category": "Sandangan"
+    },
+    {
+      "questionText": "Tulisan aksara Jawa dari kata 'nyapu' adalah?",
+      "options": [
+        { "text": "ꦚꦥꦸ", "isCorrect": true },
+        { "text": "ꦚꦥꦶ", "isCorrect": false },
+        { "text": "ꦚꦧꦸ", "isCorrect": false },
+        { "text": "ꦚꦥꦺ", "isCorrect": false }
+      ],
+      "category": "Sandangan"
+    },
+    {
+      "questionText": "Sandhangan 'cakra' (ꦿ) berfungsi untuk?",
+      "options": [
+        { "text": "Menunjukkan bunyi 'r' setelah konsonan", "isCorrect": true },
+        { "text": "Menunjukkan bunyi 'l'", "isCorrect": false },
+        { "text": "Menghilangkan vokal", "isCorrect": false },
+        { "text": "Memanjangkan vokal", "isCorrect": false }
+      ],
+      "category": "Sandangan"
+    },
+    {
+      "questionText": "Tulisan aksara Jawa dari kata 'kriya' adalah?",
+      "options": [
+        { "text": "ꦏꦿꦶꦪ", "isCorrect": true },
+        { "text": "ꦏꦾꦶꦫ", "isCorrect": false },
+        { "text": "ꦏꦾꦶꦪ", "isCorrect": false },
+        { "text": "ꦏꦿꦶꦫ", "isCorrect": false }
+      ],
+      "category": "Sandangan"
+    },
+    {
+      "questionText": "Sandhangan 'wignyan' (ꦃ) digunakan untuk?",
+      "options": [
+        { "text": "Akhiran bunyi 'h'", "isCorrect": true },
+        { "text": "Awalan bunyi 'h'", "isCorrect": false },
+        { "text": "Akhiran bunyi 'ng'", "isCorrect": false },
+        { "text": "Menambahkan vokal 'o'", "isCorrect": false }
+      ],
+      "category": "Sandangan"
+    },
+    {
+      "questionText": "Sandhangan yang menunjukkan bunyi 'ai' seperti pada 'sai' adalah?",
+      "options": [
+        { "text": "ꦻ", "isCorrect": true },
+        { "text": "ꦺ", "isCorrect": false },
+        { "text": "ꦴ", "isCorrect": false },
+        { "text": "ꦷ", "isCorrect": false }
+      ],
+      "category": "Sandangan"
+    }
+]

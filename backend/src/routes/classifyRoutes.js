@@ -1,7 +1,10 @@
 const express = require('express');
-const router = express.Router();
-const { classifyImage } = require('../controllers/classifyController');
+const multer = require('multer');
+const { handleClassification } = require('../controllers/classifyController');
 
-router.post('/', classifyImage);
+const router = express.Router();
+const upload = multer({ storage: multer.memoryStorage() });
+
+router.post('/', upload.single('image'), handleClassification);
 
 module.exports = router;

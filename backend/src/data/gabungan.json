@@ -1,0 +1,102 @@
+[
+    {
+        "questionText": "Apa bentuk gabungan aksara untuk suku kata 'bra'?",
+        "options": [
+          { "text": "ꦧꦿ", "isCorrect": true },
+          { "text": "ꦧꦽ", "isCorrect": false },
+          { "text": "ꦧꦫ", "isCorrect": false },
+          { "text": "ꦧꦔ", "isCorrect": false }
+        ],
+        "category": "Gabungan"
+      },
+      {
+        "questionText": "Gabungan huruf apa yang membentuk suku kata 'kra'?",
+        "options": [
+          { "text": "ꦏꦿ", "isCorrect": true },
+          { "text": "ꦏꦫ", "isCorrect": false },
+          { "text": "ꦏꦥ", "isCorrect": false },
+          { "text": "ꦏꦽ", "isCorrect": false }
+        ],
+        "category": "Gabungan"
+      },
+      {
+        "questionText": "Tulisan aksara Jawa untuk 'kya' yang benar adalah?",
+        "options": [
+          { "text": "ꦏꦾ", "isCorrect": true },
+          { "text": "ꦏꦪ", "isCorrect": false },
+          { "text": "ꦏꦽ", "isCorrect": false },
+          { "text": "ꦏꦗ", "isCorrect": false }
+        ],
+        "category": "Gabungan"
+      },
+      {
+        "questionText": "Bagaimana menulis 'gla' dalam aksara Jawa gabungan?",
+        "options": [
+          { "text": "ꦒ꧀ꦭ", "isCorrect": true },
+          { "text": "ꦒꦭ", "isCorrect": false },
+          { "text": "ꦒꦺꦭ", "isCorrect": false },
+          { "text": "ꦒ꧀ꦊ", "isCorrect": false }
+        ],
+        "category": "Gabungan"
+      },
+      {
+        "questionText": "Gabungan aksara untuk 'sna' ditulis dengan?",
+        "options": [
+          { "text": "ꦱ꧀ꦤ", "isCorrect": true },
+          { "text": "ꦱꦤ", "isCorrect": false },
+          { "text": "ꦱꦟ", "isCorrect": false },
+          { "text": "ꦱꦔ", "isCorrect": false }
+        ],
+        "category": "Gabungan"
+      },
+      {
+        "questionText": "Tulisan aksara Jawa gabungan untuk 'mbu' adalah?",
+        "options": [
+          { "text": "ꦩ꧀ꦧꦸ", "isCorrect": true },
+          { "text": "ꦩꦧꦸ", "isCorrect": false },
+          { "text": "ꦩꦸꦧ", "isCorrect": false },
+          { "text": "ꦩꦧꦺ", "isCorrect": false }
+        ],
+        "category": "Gabungan"
+      },
+      {
+        "questionText": "Bagaimana cara menulis gabungan 'ndr' dalam aksara Jawa?",
+        "options": [
+          { "text": "ꦤ꧀ꦢ꧀ꦫ", "isCorrect": true },
+          { "text": "ꦤꦢꦫ", "isCorrect": false },
+          { "text": "ꦤ꧀ꦢꦫ", "isCorrect": false },
+          { "text": "ꦤ꧀ꦢ꧀ꦉ", "isCorrect": false }
+        ],
+        "category": "Gabungan"
+      },
+      {
+        "questionText": "Gabungan konsonan untuk 'cya' dalam aksara Jawa ditulis?",
+        "options": [
+          { "text": "ꦕꦾ", "isCorrect": true },
+          { "text": "ꦕꦪ", "isCorrect": false },
+          { "text": "ꦕꦚ", "isCorrect": false },
+          { "text": "ꦕꦿ", "isCorrect": false }
+        ],
+        "category": "Gabungan"
+      },
+      {
+        "questionText": "Gabungan huruf 'sma' dalam aksara Jawa adalah?",
+        "options": [
+          { "text": "ꦱ꧀ꦩ", "isCorrect": true },
+          { "text": "ꦱꦩ", "isCorrect": false },
+          { "text": "ꦱꦶꦩ", "isCorrect": false },
+          { "text": "ꦱꦺꦩ", "isCorrect": false }
+        ],
+        "category": "Gabungan"
+      },
+      {
+        "questionText": "Apa bentuk yang benar untuk menulis 'nya' dalam bentuk pasangan atau gabungan?",
+        "options": [
+          { "text": "ꦚ꧀ꦪ", "isCorrect": true },
+          { "text": "ꦚꦾ", "isCorrect": false },
+          { "text": "ꦚꦁ", "isCorrect": false },
+          { "text": "ꦚꦪ", "isCorrect": false }
+        ],
+        "category": "Gabungan"
+    }
+]

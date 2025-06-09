@@ -42,9 +42,13 @@ module.exports = {
     })
   ],
   devServer: {
-    static: './dist',
+    static: [
+      path.resolve(__dirname, 'dist'),
+      path.resolve(__dirname, 'public'), 
+    ],
     port: 3000,
-    open: true
+    open: true,
+    historyApiFallback: true
   },
   mode: 'development'
 };
