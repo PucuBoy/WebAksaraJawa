@@ -2,8 +2,10 @@ import React from 'react';
 import Navbar from '../components/Navbar';
 import { Container, Row, Col, Card, Button } from 'react-bootstrap';
 import OrangAngkatTangan from '../assets/orang-angkat-tangan.png'; 
+import { useNavigate } from 'react-router-dom';
 
 const ExercisePage = () => {
+  const navigate = useNavigate();
   return (
     <div style={{ backgroundColor: '#543A14', minHeight: '100vh', color: '#000' }}>
       <Navbar />
@@ -42,21 +44,27 @@ const ExercisePage = () => {
           <Card style={{ width: '18rem', padding: '20px', textAlign: 'center', boxShadow: '2px 2px 6px rgba(0,0,0,0.2)' }}>
             <Card.Body>
               <Card.Title><strong>Materi Pengenalan</strong></Card.Title>
-              <Button variant="dark" className="mt-3">Mulai</Button>
+              <Button variant="dark" className="mt-3" onClick={() => navigate('/exercise/pengenalan')}>
+                Mulai
+                </Button>
             </Card.Body>
           </Card>
 
           <Card style={{ width: '18rem', padding: '20px', textAlign: 'center', boxShadow: '2px 2px 6px rgba(0,0,0,0.2)' }}>
             <Card.Body>
               <Card.Title><strong>Materi Gabungan</strong></Card.Title>
-              <Button variant="dark" className="mt-3">Mulai</Button>
+              <Button variant="dark" className="mt-3" onClick={() => navigate('/exercise/gabungan')} >
+                Mulai
+              </Button>
             </Card.Body>
           </Card>
 
           <Card style={{ width: '18rem', padding: '20px', textAlign: 'center', boxShadow: '2px 2px 6px rgba(0,0,0,0.2)' }}>
             <Card.Body>
               <Card.Title><strong>Materi Sandangan</strong></Card.Title>
-              <Button variant="dark" className="mt-3">Mulai</Button>
+              <Button variant="dark" className="mt-3" onClick={() => navigate('/exercise/sandangan')} >
+                Mulai
+              </Button>
             </Card.Body>
           </Card>
         </Row>
