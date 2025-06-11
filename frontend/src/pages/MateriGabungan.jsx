@@ -73,11 +73,13 @@ const MateriGabungan = () => {
   const [showModal, setShowModal] = useState(false);
   const [userAnswers, setUserAnswers] = useState(Array(questions.length).fill(null));
   const [showResult, setShowResult] = useState(false);
+  const [showWarning, setShowWarning] = useState(false); 
 
   const handleAnswer = (answer) => {
     const updatedAnswers = [...userAnswers];
     updatedAnswers[currentQuestion] = answer;
     setUserAnswers(updatedAnswers);
+    setShowWarning(false); 
   };
 
   const calculateScore = () => {
@@ -85,6 +87,16 @@ const MateriGabungan = () => {
   };
 
   const handleConfirmFinish = () => {
+    const isComplete = userAnswers.every(ans => ans !== null);
+    if (!isComplete) {
+      setShowWarning(true); 
+      return;
+    }
+    setShowWarning(false);
+    setShowModal(true);
+  };
+
+  const confirmFinishAndShowResult = () => {
     setShowModal(false);
     setShowResult(true);
   };
@@ -99,10 +111,10 @@ const MateriGabungan = () => {
     const score = calculateScore();
     const total = questions.length;
     const percentage = (score / total) * 100;
-  
+
     let message;
     let borderColor;
-  
+
     if (percentage === 100) {
       message = 'Luar biasa! Kamu dapat nilai 100! Wah, kamu benar-benar jago belajar Aksara Jawa! Terus pertahankan semangat belajarnya, ya. Kamu keren banget!';
       borderColor = 'green';
@@ -113,23 +125,20 @@ const MateriGabungan = () => {
       message = 'Masih ada yang salah nih, tapi kamu sudah hebat! Yuk, pelajari lagi supaya makin jago baca dan nulis Aksara Jawa! Terus semangat belajarnya ya, kamu pasti bisa!';
       borderColor = 'orange';
     }
-  
+
     return (
       <div style={{ backgroundColor: '#543A14', minHeight: '100vh', padding: '20px', color: '#000' }}>
-        <Button
-          variant="secondary"
-          onClick={() => navigate('/exercise')}
-        >
+        <Button variant="secondary" onClick={() => navigate('/exercise')}>
           Kembali ke latihan soal
         </Button>
-  
+
         <Container style={{ backgroundColor: '#FFE3B3', borderRadius: '10px', padding: '30px', marginTop: '20px' }}>
           <Card className="p-4 mb-4" style={{ backgroundColor: '#fff', borderLeft: `10px solid ${borderColor}` }}>
             <h3 style={{ color: borderColor, fontWeight: 'bold' }}>Nilai {score * 10}</h3>
             <p style={{ marginBottom: '0' }}>{message}</p>
             <strong>Total soal: {total}</strong>
           </Card>
-  
+
           {questions.map((q, i) => (
             <Card className="mb-3" key={i}>
               <Card.Body>
@@ -165,22 +174,37 @@ const MateriGabungan = () => {
       </Button>
 
       <h4 className="mt-3" style={{ color: '#fff', fontWeight: 'bold' }}>
-        Latihan Soal Materi Gabungan
+        Latihan Soal Materi Gabungan Aksara Jawa
       </h4>
       <hr style={{ borderColor: '#fff' }} />
 
+      {showWarning && (
+        <div className="text-center mb-3" style={{ color: 'red', fontWeight: 'bold' }}>
+          ⚠️ Mohon isi semua jawaban!
+        </div>
+      )}
+
       <Container style={{ backgroundColor: '#FFDDAB', borderRadius: '10px', padding: '30px', maxWidth: '90%', marginTop: '20px', marginBottom: '40px', boxShadow: '2px 2px 10px rgba(0,0,0,0.3)' }}>
         <Row className="mb-4 justify-content-center">
-          {questions.map((_, index) => (
-            <Button
-              key={index}
-              variant={index === currentQuestion ? 'dark' : 'outline-dark'}
-              onClick={() => setCurrentQuestion(index)}
-              style={{ borderRadius: '50%', width: '40px', height: '40px', margin: '5px' }}
-            >
-              {index + 1}
-            </Button>
-          ))}
+        {questions.map((_, index) => {
+              const isCurrent = index === currentQuestion;
+              const isAnswered = userAnswers[index] !== null;
+  
+              let variant = 'outline-dark';
+              if (isCurrent) variant = 'dark';
+              else if (isAnswered) variant = 'success';
+  
+              return (
+                <Button
+                  key={index}
+                  variant={variant}
+                  onClick={() => setCurrentQuestion(index)}
+                  style={{ borderRadius: '50%', width: '40px', height: '40px', margin: '5px'}}
+                  >
+                    {index + 1}
+                  </Button>
+              );
+            })}
         </Row>
 
         <h4><strong>Soal {current.id}</strong></h4>
@@ -213,7 +237,7 @@ const MateriGabungan = () => {
                 Selanjutnya
               </Button>
             ) : (
-              <Button variant="success" onClick={() => setShowModal(true)}>
+              <Button variant="success" onClick={handleConfirmFinish}>
                 Selesai
               </Button>
             )}
@@ -226,7 +250,7 @@ const MateriGabungan = () => {
           <h5><strong>Sudah yakin dengan jawabanmu?</strong></h5>
           <p>Kalau sudah siap, klik “Ya” untuk mengakhiri latihan ya!</p>
           <div className="d-flex justify-content-center gap-2 mt-3">
-            <Button variant="dark" onClick={handleConfirmFinish}>Ya</Button>
+            <Button variant="dark" onClick={confirmFinishAndShowResult}>Ya</Button>
             <Button variant="light" onClick={handleCancelFinish}>Tidak</Button>
           </div>
         </Modal.Body>
