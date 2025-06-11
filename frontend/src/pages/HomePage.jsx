@@ -24,11 +24,7 @@ const HomePage = () => {
                 src={aksarahome}
                 alt="Ilustrasi Aksara Jawa"
                 className="img-fluid"
-                style={{
-                  maxWidth: '100%',
-                  border: 'none',
-                  borderRadius: '5px'
-                }}
+                style={{ maxWidth: '100%', border: 'none', borderRadius: '5px' }}
               />
               <img
                 src={sedangmenulis}
@@ -44,7 +40,6 @@ const HomePage = () => {
               />
             </div>
           </Col>
-
           <Col md={6} className="mt-4 mt-md-0">
             <h1 style={{ color: '#3E1F1F', fontSize: '2.8rem', fontWeight: '700' }}>
               Pelajari Warisan Budaya Melalui Aksara Jawa
@@ -66,15 +61,11 @@ const HomePage = () => {
         </Row>
       </Container>
 
-      {/* card section */}
-      <div style={{
-        position: 'relative',
-        marginTop: '50px',
-        width: '100%',
-        paddingBottom: '50px'
-      }}>
+      {/* Card Section */}
+      <div style={{ position: 'relative', marginTop: '50px', width: '100%', paddingBottom: '50px' }}>
         <Container>
           <Row className="g-4 justify-content-center">
+            {/* Kumpulan Card */}
             {[
               {
                 title: 'Mengapa Harus Belajar Aksara Jawa?',
@@ -83,7 +74,7 @@ const HomePage = () => {
                 textColor: '#3E1F1F',
                 buttonBg: '#543A14',
                 buttonText: '#FFD8A9',
-                path: '/why-learn'  
+                path: '/why-learn'
               },
               {
                 title: 'Sejarah Aksara Jawa',
@@ -130,29 +121,17 @@ const HomePage = () => {
                   color: card.textColor,
                   fontSize: '1rem',
                   boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
-                  height: '100%',      
-                  minHeight: '200px',   
+                  height: '100%',
+                  minHeight: '200px',
                   display: 'flex',
                   flexDirection: 'column',
                   justifyContent: 'space-between',
                 }}>
-                  <Card.Body
-                    style={{
-                      display: 'flex',
-                      flexDirection: 'column',
-                      justifyContent: 'space-between',
-                      height: '100%',
-                      padding: '30px'
-                    }}
-                  >
-                    <Card.Title style={{ fontSize: '1.5rem', fontWeight: '700' }}>
-                      {card.title}
-                    </Card.Title>
-                    <Card.Text style={{ marginTop: '10px', marginBottom: '20px' }}>
-                      {card.text}
-                    </Card.Text>
+                  <Card.Body style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', height: '100%', padding: '30px' }}>
+                    <Card.Title style={{ fontSize: '1.5rem', fontWeight: '700' }}>{card.title}</Card.Title>
+                    <Card.Text style={{ marginTop: '10px', marginBottom: '20px' }}>{card.text}</Card.Text>
                     <Button
-                      onClick={() => navigate(card.path)}  
+                      onClick={() => navigate(card.path)}
                       style={{
                         backgroundColor: card.buttonBg,
                         border: 'none',
@@ -173,8 +152,25 @@ const HomePage = () => {
         </Container>
       </div>
 
-      {/* Video Section dengan YouTube Embed */}
-      <Container className="my-5 py-4" style={{ backgroundColor: '#FDC886', borderRadius: '10px' }}>
+      <Container className="text-center my-4">
+        <h5 className="fw-bold" style={{ color: '#3E1F1F', fontSize: '2.8rem' }}>
+          Tentang AksaraKu
+        </h5>
+        <p style={{
+        maxWidth: '700px',
+        margin: '0 auto',
+        color: '#3E1F1F',
+        fontSize: '1.10rem',
+        textAlign: 'justify',
+        textJustify: 'inter-word',
+        }}>
+          AksaraKu adalah aplikasi web edukasi untuk mengenal dan mengklasifikasikan aksara Jawa, dengan fitur latihan soal dan klasifikasi gambar berbasis Machine Learning.
+          Cocok untuk pelajar yang ingin belajar askara Jawa secara menyenangkan dan interaktif.
+        </p>
+      </Container>
+
+
+      <Container className="my-5">
         <Row className="align-items-center text-center text-md-start">
           <Col md={8}>
             <h5 className="fw-bold mb-2">Mari Pelajari Lebih Lanjut Tentang Sejarah Aksara Jawa</h5>
@@ -191,7 +187,6 @@ const HomePage = () => {
           </Col>
         </Row>
       </Container>
-
 
       {/* Kutipan Budaya */}
       <Container className="my-5 p-4" style={{ backgroundColor: '#FFF2DC', borderRadius: '8px' }}>
@@ -210,61 +205,40 @@ const HomePage = () => {
         </Row>
       </Container>
 
-      {/* Testimonial Carousel */}
+      {/* Carousel Testimoni */}
       <Container className="my-5">
         <h5 className="fw-bold">Apa Kata Mereka?</h5>
         <Carousel indicators={false} controls={false} interval={4000}>
-          {/* Slide 1 */}
-          <Carousel.Item>
-            <Row className="justify-content-center gap-3">
-              {[
-                { name: 'Nana', text: 'Sangat membantu memahami budaya Jawa.' },
-                { name: 'Didi', text: 'Visualnya menarik dan mudah dimengerti.' },
-                { name: 'Rani', text: 'Sekarang saya bisa baca aksara Jawa!' }
-              ].map((testimonial, idx) => (
-                <Col key={idx} md={3} className="p-2">
-                  <Card className="h-100 shadow-sm">
-                    <Card.Body>
-                      <Card.Text style={{ fontSize: '0.95rem' }}>
-                        "{testimonial.text}"
-                      </Card.Text>
-                      <Card.Footer className="text-end mt-3">
-                        <strong>{testimonial.name}</strong>
-                      </Card.Footer>
-                    </Card.Body>
-                  </Card>
-                </Col>
-              ))}
-            </Row>
-          </Carousel.Item>
-
-          {/* Slide 2 */}
-          <Carousel.Item>
-            <Row className="justify-content-center gap-3">
-              {[
-                { name: 'Bimo', text: 'Interaktif dan menyenangkan belajar di sini.' },
-                { name: 'Sari', text: 'Kontennya lengkap dan historis.' },
-                { name: 'Wira', text: 'User-friendly dan mendidik!' }
-              ].map((testimonial, idx) => (
-                <Col key={idx} md={3} className="p-2">
-                  <Card className="h-100 shadow-sm">
-                    <Card.Body>
-                      <Card.Text style={{ fontSize: '0.95rem' }}>
-                        "{testimonial.text}"
-                      </Card.Text>
-                      <Card.Footer className="text-end mt-3">
-                        <strong>{testimonial.name}</strong>
-                      </Card.Footer>
-                    </Card.Body>
-                  </Card>
-                </Col>
-              ))}
-            </Row>
-          </Carousel.Item>
+          {[[
+            { name: 'Nana', text: 'Sangat membantu memahami budaya Jawa.' },
+            { name: 'Didi', text: 'Visualnya menarik dan mudah dimengerti.' },
+            { name: 'Rani', text: 'Sekarang saya bisa baca aksara Jawa!' }
+          ], [
+            { name: 'Bimo', text: 'Interaktif dan menyenangkan belajar di sini.' },
+            { name: 'Sari', text: 'Kontennya lengkap dan historis.' },
+            { name: 'Wira', text: 'User-friendly dan mendidik!' }
+          ]].map((group, index) => (
+            <Carousel.Item key={index}>
+              <Row className="justify-content-center gap-3">
+                {group.map((testimonial, idx) => (
+                  <Col key={idx} md={3} className="p-2">
+                    <Card className="h-100 shadow-sm">
+                      <Card.Body>
+                        <Card.Text style={{ fontSize: '0.95rem' }}>
+                          "{testimonial.text}"
+                        </Card.Text>
+                        <Card.Footer className="text-end mt-3">
+                          <strong>{testimonial.name}</strong>
+                        </Card.Footer>
+                      </Card.Body>
+                    </Card>
+                  </Col>
+                ))}
+              </Row>
+            </Carousel.Item>
+          ))}
         </Carousel>
       </Container>
-
-
 
       {/* Form Ulasan */}
       <Container className="my-5">
@@ -328,7 +302,6 @@ const HomePage = () => {
           </p>
         </Container>
       </footer>
-        
     </div>
   );
 };
