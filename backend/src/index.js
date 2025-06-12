@@ -17,6 +17,10 @@ app.use(morgan('dev'));
 app.use('/api/classify', classifyRoutes);
 app.use('/api/questions', questionRoutes);
 
+app.get('/', (req, res) => {
+  res.send('WebAksaraJawa API is running...');
+});
+
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`✅ Server running at http://localhost:${PORT}`);
