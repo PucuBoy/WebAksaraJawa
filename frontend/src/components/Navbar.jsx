@@ -1,6 +1,6 @@
 import React from 'react';
-import { Nav } from 'react-bootstrap';
-import { NavLink } from 'react-router-dom';
+import { Navbar as BootstrapNavbar, Nav, Container } from 'react-bootstrap';
+import { NavLink, useLocation } from 'react-router-dom';
 
 const Navbar = () => {
   const navItemStyle = {
@@ -19,56 +19,64 @@ const Navbar = () => {
   };
 
   return (
-    <Nav
-      className="p-3"
-      style={{
-        display: 'flex',
-        justifyContent: 'flex-start',
-        gap: '10px',
-        margin: '20px',
-        marginLeft: '100px',
-      }}
-    >
-      <Nav.Link
-        as={NavLink}
-        to="/"
-        style={({ isActive }) =>
-          isActive ? { ...navItemStyle, ...activeStyle } : navItemStyle
-        }
-      >
-        Beranda
-      </Nav.Link>
+    <BootstrapNavbar expand="lg" className="py-3">
+      <Container fluid>
+        {/* Toggle di kiri */}
+        <BootstrapNavbar.Toggle aria-controls="basic-navbar-nav" className="mb-2" />
 
-      <Nav.Link
-        as={NavLink}
-        to="/modul"
-        style={({ isActive }) =>
-          isActive ? { ...navItemStyle, ...activeStyle } : navItemStyle
-        }
-      >
-        Modul
-      </Nav.Link>
+        {/* Collapse akan muncul di bawah toggle */}
+        <BootstrapNavbar.Collapse id="basic-navbar-nav">
+          <Nav
+            className="ms-auto flex-column flex-lg-row"
+            style={{
+              gap: '10px',
+              paddingLeft: '100px' ,
+              paddingRight: '100px',              
+            }}
+          >
+            <Nav.Link
+              as={NavLink}
+              to="/"
+              style={({ isActive }) =>
+                isActive ? { ...navItemStyle, ...activeStyle } : navItemStyle
+              }
+            >
+              Beranda
+            </Nav.Link>
 
-      <Nav.Link
-        as={NavLink}
-        to="/exercise"
-        style={({ isActive }) =>
-          isActive ? { ...navItemStyle, ...activeStyle } : navItemStyle
-        }
-      >
-        Latihan
-      </Nav.Link>
+            <Nav.Link
+              as={NavLink}
+              to="/intro-modul"
+              style={({ isActive }) =>
+                isActive ? { ...navItemStyle, ...activeStyle } : navItemStyle
+              }
+            >
+              Modul
+            </Nav.Link>
 
-      <Nav.Link
-        as={NavLink}
-        to="/klasifikasi-gambar"
-        style={({ isActive }) =>
-          isActive ? { ...navItemStyle, ...activeStyle } : navItemStyle
-        }
-      >
-        Klasifikasi Gambar
-      </Nav.Link>
-    </Nav>
+            <Nav.Link
+              as={NavLink}
+              to="/exercise"
+              style={({ isActive }) =>
+                isActive ? { ...navItemStyle, ...activeStyle } : navItemStyle
+              }
+            >
+              Latihan
+            </Nav.Link>
+
+            <Nav.Link
+              as={NavLink}
+              to="/klasifikasi-gambar"
+              style={({ isActive }) =>
+                isActive ? { ...navItemStyle, ...activeStyle } : navItemStyle
+              }
+            >
+              Klasifikasi Gambar
+            </Nav.Link>
+          </Nav>
+        </BootstrapNavbar.Collapse>
+      </Container>
+    </BootstrapNavbar>
   );
 };
 

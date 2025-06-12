@@ -1,5 +1,6 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
+import AnimatedPage from '../components/AnimatedPage';
 import { Container, Row, Col, Card, Button } from 'react-bootstrap';
 import OrangAngkatTangan from '../assets/orang-angkat-tangan.png'; 
 import { useNavigate } from 'react-router-dom';
@@ -7,6 +8,7 @@ import { useNavigate } from 'react-router-dom';
 const ExercisePage = () => {
   const navigate = useNavigate();
   return (
+  <AnimatedPage>
     <div style={{ backgroundColor: '#543A14', minHeight: '100vh', color: '#000' }}>
       <Navbar />
       <Container
@@ -70,6 +72,7 @@ const ExercisePage = () => {
         </Row>
       </Container>
     </div>
+    </AnimatedPage>  
   );
 };
 

@@ -2,6 +2,28 @@ import React, { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Container, Row, Col, Card, Button, Form } from 'react-bootstrap';
 
+const ImageUploadButton = ({ id, label, onChange, capture }) => {
+  return (
+    <Form.Group controlId={id}>
+      <Form.Control
+        id={id}
+        type="file"
+        accept="image/*"
+        capture={capture}
+        onChange={onChange}
+        style={{ display: 'none' }}
+      />
+      <Button
+        variant="dark"
+        style={{ backgroundColor: '#4E3912', border: 'none' }}
+        onClick={() => document.getElementById(id).click()}
+      >
+        {label}
+      </Button>
+    </Form.Group>
+  );
+};
+
 const ImageClassifierPage = () => {
   const [imagePreview, setImagePreview] = useState(null);
   const [translation, setTranslation] = useState("Klasifikasi");
@@ -87,38 +109,17 @@ const ImageClassifierPage = () => {
               Pastikan gambar terang dan huruf terlihat jelas, ya!
             </p>
             <div className="d-flex gap-3">
-              <Form.Group controlId="uploadImage">
-                <Form.Control
-                  type="file"
-                  accept="image/*"
-                  capture="environment"
-                  onChange={handleImageUpload}
-                  style={{ display: 'none' }}
-                />
-                <Button
-                  variant="dark"
-                  style={{ backgroundColor: '#4E3912', border: 'none' }}
-                  onClick={() => document.getElementById('uploadImage').click()}
-                >
-                  Unggah gambar
-                </Button>
-              </Form.Group>
-
-              <Form.Group controlId="uploadImageFile">
-                <Form.Control
-                  type="file"
-                  accept="image/*"
-                  onChange={handleImageUpload}
-                  style={{ display: 'none' }}
-                />
-                <Button
-                  variant="dark"
-                  style={{ backgroundColor: '#4E3912', border: 'none' }}
-                  onClick={() => document.getElementById('uploadImageFile').click()}
-                >
-                  Ambil gambar
-                </Button>
-              </Form.Group>
+              <ImageUploadButton
+                id="captureImage"
+                label="Ambil gambar"
+                capture="environment"
+                onChange={handleImageUpload}
+              />
+              <ImageUploadButton
+                id="uploadImage"
+                label="Unggah gambar"
+                onChange={handleImageUpload}
+              />
             </div>
           </Col>
         </Row>

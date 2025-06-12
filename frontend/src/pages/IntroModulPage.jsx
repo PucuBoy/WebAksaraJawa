@@ -1,5 +1,6 @@
 import React from "react";
 import Navbar from "../components/Navbar";
+import AnimatedPage from '../components/AnimatedPage';
 import OrangAngkatTangan from "../assets/orang-angkat-tangan.png";
 import AksaraSwara from "../assets/aksara-swara.jpg";
 import AksaraRekan from "../assets/aksara-rekan.jpg";
@@ -65,6 +66,7 @@ const sectionStyle = {
 
 const IntroModulPage = () => {
   return (
+    <AnimatedPage>
     <div style={sectionStyle}>
       <Navbar />
       <Container>
@@ -346,6 +348,7 @@ const IntroModulPage = () => {
         </Row>
       </Container>
     </div>
+    </AnimatedPage>
   );
 };
 

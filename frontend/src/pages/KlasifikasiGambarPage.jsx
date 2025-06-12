@@ -1,5 +1,6 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
+import AnimatedPage from '../components/AnimatedPage';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import BackgroundImage from '../assets/bg-klasifikasi.png'; 
@@ -8,6 +9,7 @@ const KlasifikasiGambarPage = () => {
   const navigate = useNavigate();
 
   return (
+    <AnimatedPage>
     <div
       style={{
         backgroundImage: `url(${BackgroundImage})`,
@@ -48,6 +50,7 @@ const KlasifikasiGambarPage = () => {
         </Row>
       </Container>
     </div>
+    </AnimatedPage>
   );
 };
 

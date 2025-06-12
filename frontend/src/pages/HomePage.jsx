@@ -2,6 +2,7 @@ import React from 'react';
 import { Container, Row, Col, Button, Card, Carousel } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import Navbar from '../components/Navbar';
+import AnimatedPage from '../components/AnimatedPage';
 import aksarahome from '../assets/aksarahome.png';
 import sedangmenulis from '../assets/sedangmenulis.png';
 
@@ -9,6 +10,7 @@ const HomePage = () => {
   const navigate = useNavigate(); 
 
   return (
+    <AnimatedPage>
     <div style={{ backgroundColor: '#FFDDAB', position: 'relative' }}>
       {/* Navbar */}
       <div className="d-flex justify-content">
@@ -48,6 +50,7 @@ const HomePage = () => {
               Kenali huruf-huruf kuno, dan pahami makna di baliknya.
             </p>
             <Button
+              onClick={() => navigate('/intro-modul')}
               style={{
                 backgroundColor: '#945034',
                 border: 'none',
@@ -57,6 +60,7 @@ const HomePage = () => {
               }}>
               Mulai Belajar
             </Button>
+
           </Col>
         </Row>
       </Container>
@@ -303,6 +307,7 @@ const HomePage = () => {
         </Container>
       </footer>
     </div>
+    </AnimatedPage>  
   );
 };
 
