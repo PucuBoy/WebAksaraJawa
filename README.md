@@ -60,7 +60,7 @@ npm run start
 
 # Jalankan Frontend saja
 ```bash
-cd backend
+cd frontend
 npm run start
 ```
 
