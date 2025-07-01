@@ -64,7 +64,7 @@ const ImageClassifierPage = () => {
     formData.append("image", imageFile);
 
     try {
-      const response = await fetch("https://backend-production-d68b.up.railway.app/api/classify", {
+      const response = await fetch("https://backend-production-0112.up.railway.app/api/classify", {
         method: "POST",
         body: formData,
       });
